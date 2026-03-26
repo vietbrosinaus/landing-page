@@ -1,9 +1,12 @@
 import Image from "next/image";
+import ContactForm from "./contact-form";
+import ThemeToggle from "./theme-toggle";
 
 const people = [
   {
     name: "Elvis Tran",
     handle: "@elvistranhere",
+    github: "elvistranhere",
     role: "FDE @lyratechnologies",
     avatar: "https://avatars.githubusercontent.com/u/40386529?v=4",
     site: "https://elvis-tran.is-a.dev",
@@ -11,6 +14,7 @@ const people = [
   {
     name: "Bach Tran",
     handle: "@Theskrtnerd",
+    github: "Theskrtnerd",
     role: "xineohperif",
     avatar: "https://avatars.githubusercontent.com/u/88916722?v=4",
     site: "https://theskrtnerd.github.io",
@@ -31,7 +35,56 @@ const projects = [
   },
 ];
 
-export default function Home() {
+type GitHubStats = {
+  publicRepos: number;
+  followers: number;
+  contributions: number;
+};
+
+async function getGitHubStats(username: string): Promise<GitHubStats | null> {
+  try {
+    const [userRes, profileRes] = await Promise.all([
+      fetch(`https://api.github.com/users/${username}`, {
+        next: { revalidate: 3600 },
+      }),
+      fetch(`https://github.com/users/${username}/contributions`, {
+        next: { revalidate: 3600 },
+      }),
+    ]);
+
+    if (!userRes.ok) return null;
+    const user = await userRes.json();
+
+    let contributions = 0;
+    if (profileRes.ok) {
+      const html = await profileRes.text();
+      const match = html.match(
+        /([\d,]+)\s+contributions?\s+in\s+the\s+last\s+year/i
+      );
+      if (match) {
+        contributions = parseInt(match[1].replace(/,/g, ""), 10);
+      }
+    }
+
+    return {
+      publicRepos: user.public_repos ?? 0,
+      followers: user.followers ?? 0,
+      contributions,
+    };
+  } catch {
+    return null;
+  }
+}
+
+export default async function Home() {
+  const statsMap = new Map<string, GitHubStats | null>();
+  await Promise.all(
+    people.map(async (p) => {
+      const stats = await getGitHubStats(p.github);
+      statsMap.set(p.github, stats);
+    })
+  );
+
   return (
     <div className="min-h-dvh">
       {/* Nav */}
@@ -40,40 +93,33 @@ export default function Home() {
           <span className="font-mono text-sm tracking-tight font-medium">
             vba
           </span>
-          <div className="flex gap-8 font-mono text-xs tracking-wide text-muted">
-            <a
-              href="#people"
-              className="hover:text-foreground transition-colors duration-300"
-            >
-              People
-            </a>
-            <a
-              href="#projects"
-              className="hover:text-foreground transition-colors duration-300"
-            >
+          <div className="flex items-center gap-8 font-mono text-xs tracking-wide text-muted">
+            <a href="#projects" className="nav-link hover:text-foreground transition-colors duration-300">
               Projects
             </a>
-            <a
-              href="#contact"
-              className="hover:text-foreground transition-colors duration-300"
-            >
+            <a href="#people" className="nav-link hover:text-foreground transition-colors duration-300">
+              People
+            </a>
+            <a href="#contact" className="nav-link hover:text-foreground transition-colors duration-300">
               Contact
             </a>
+            <ThemeToggle />
           </div>
         </div>
       </nav>
 
       {/* Hero */}
-      <section className="min-h-dvh flex flex-col justify-center px-6 max-w-[1200px] mx-auto">
+      <section className="min-h-dvh flex flex-col justify-center px-6 max-w-[1200px] mx-auto relative">
         <div className="pt-14">
           <h1 className="animate-fade-up text-[clamp(3rem,10vw,9rem)] font-bold leading-[0.9] tracking-[-0.04em] mb-8">
-            vietbros
+            <span className="hero-title">vietbros</span>
             <br />
             <span className="text-muted">inaus</span>
           </h1>
           <p className="animate-fade-up delay-2 max-w-lg text-lg md:text-xl leading-relaxed text-muted">
-            One of the most cracked dev teams providing actual free apps that
-            actually benefit people.
+            We&apos;re Vietnamese devs based in Australia who believe useful
+            software should be free. Everything we build is open-source and
+            made for real people.
           </p>
           <div className="animate-fade-up delay-3 mt-12 flex items-center gap-4">
             <a
@@ -93,58 +139,26 @@ export default function Home() {
             </a>
           </div>
         </div>
-      </section>
 
-      {/* People */}
-      <section id="people" className="px-6 max-w-[1200px] mx-auto py-32">
-        <div className="animate-fade-up mb-20">
-          <span className="font-mono text-xs tracking-widest uppercase text-muted">
-            01
-          </span>
-          <h2 className="text-5xl md:text-7xl font-bold tracking-[-0.03em] mt-2">
-            People
-          </h2>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-16 md:gap-24">
-          {people.map((person, i) => (
-            <a
-              key={person.handle}
-              href={person.site}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`animate-fade-up delay-${i + 2} group block`}
-            >
-              <div className="flex items-start gap-6">
-                <Image
-                  src={person.avatar}
-                  alt={person.name}
-                  width={80}
-                  height={80}
-                  className="rounded-full grayscale group-hover:grayscale-0 transition-all duration-500 shrink-0"
-                />
-                <div className="pt-1">
-                  <h3 className="text-2xl font-semibold tracking-tight group-hover:underline underline-offset-4 decoration-1">
-                    {person.name}
-                  </h3>
-                  <p className="font-mono text-sm text-muted mt-1">
-                    {person.role}
-                  </p>
-                  <p className="font-mono text-xs text-muted/60 mt-2">
-                    {person.handle}
-                  </p>
-                </div>
-              </div>
-            </a>
-          ))}
+        {/* Scroll indicator */}
+        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 scroll-indicator">
+          <svg
+            className="w-5 h-5 text-muted/50"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={1.5}
+          >
+            <path d="M12 5v14M19 12l-7 7-7-7" />
+          </svg>
         </div>
       </section>
 
       {/* Projects */}
       <section id="projects" className="px-6 max-w-[1200px] mx-auto py-32">
         <div className="animate-fade-up mb-20">
-          <span className="font-mono text-xs tracking-widest uppercase text-muted">
-            02
+          <span className="section-number font-mono uppercase text-xs tracking-widest text-muted">
+            01
           </span>
           <h2 className="text-5xl md:text-7xl font-bold tracking-[-0.03em] mt-2">
             Projects
@@ -158,7 +172,7 @@ export default function Home() {
               href={project.href}
               target="_blank"
               rel="noopener noreferrer"
-              className={`animate-fade-up delay-${i + 2} group flex flex-col md:flex-row md:items-center justify-between gap-4 md:gap-12 py-10 first:pt-0`}
+              className={`project-row animate-fade-up delay-${i + 2} group flex flex-col md:flex-row md:items-center justify-between gap-4 md:gap-12 py-10 first:pt-0 pl-0 hover:pl-2 transition-all duration-300`}
             >
               <div className="flex-1">
                 <h3 className="font-mono text-2xl md:text-3xl font-semibold tracking-tight">
@@ -187,10 +201,78 @@ export default function Home() {
         </div>
       </section>
 
+      {/* People */}
+      <section id="people" className="px-6 max-w-[1200px] mx-auto py-32">
+        <div className="animate-fade-up mb-20">
+          <span className="section-number font-mono uppercase text-xs tracking-widest text-muted">
+            02
+          </span>
+          <h2 className="text-5xl md:text-7xl font-bold tracking-[-0.03em] mt-2">
+            People
+          </h2>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-12 md:gap-16">
+          {people.map((person, i) => {
+            const stats = statsMap.get(person.github);
+            return (
+              <a
+                key={person.handle}
+                href={person.site}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`person-card animate-fade-up delay-${i + 2} group block border border-border rounded-xl p-8 hover:border-muted`}
+              >
+                <div className="flex flex-col items-center text-center">
+                  <Image
+                    src={person.avatar}
+                    alt={person.name}
+                    width={96}
+                    height={96}
+                    className="rounded-full grayscale group-hover:grayscale-0 transition-all duration-500"
+                  />
+                  <h3 className="text-2xl font-semibold tracking-tight mt-5 group-hover:underline underline-offset-4 decoration-1">
+                    {person.name}
+                  </h3>
+                  <p className="font-mono text-sm text-muted mt-1">
+                    {person.role}
+                  </p>
+                  <p className="font-mono text-xs text-muted/60 mt-1">
+                    {person.handle}
+                  </p>
+                  {stats && (
+                    <div className="flex gap-5 mt-5 pt-5 border-t border-border font-mono text-xs text-muted/80">
+                      <div className="flex flex-col items-center">
+                        <span className="text-foreground font-medium text-base">
+                          {stats.publicRepos}
+                        </span>
+                        repos
+                      </div>
+                      <div className="flex flex-col items-center">
+                        <span className="text-foreground font-medium text-base">
+                          {stats.contributions.toLocaleString()}
+                        </span>
+                        contributions
+                      </div>
+                      <div className="flex flex-col items-center">
+                        <span className="text-foreground font-medium text-base">
+                          {stats.followers}
+                        </span>
+                        followers
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </a>
+            );
+          })}
+        </div>
+      </section>
+
       {/* Contact */}
       <section id="contact" className="px-6 max-w-[1200px] mx-auto py-32">
         <div className="animate-fade-up mb-12">
-          <span className="font-mono text-xs tracking-widest uppercase text-muted">
+          <span className="section-number font-mono uppercase text-xs tracking-widest text-muted">
             03
           </span>
           <h2 className="text-5xl md:text-7xl font-bold tracking-[-0.03em] mt-2">
@@ -226,11 +308,15 @@ export default function Home() {
               <path d="M7 17L17 7M17 7H7M17 7v10" />
             </svg>
           </a>
+          <p className="text-muted mt-10 max-w-md">
+            Got ideas? Want in? Just want to talk? We read everything.
+          </p>
+          <ContactForm />
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="px-6 max-w-[1200px] mx-auto py-8 border-t border-border">
+      <footer className="px-6 max-w-[1200px] mx-auto py-8 border-t footer-divider">
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
           <span className="font-mono text-xs text-muted">
             vietbrosinaus &copy; {new Date().getFullYear()}
