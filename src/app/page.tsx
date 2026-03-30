@@ -30,7 +30,7 @@ const projects = [
   },
   {
     name: "noteshell",
-    description: "The best note-taking app ever created.",
+    description: "The interactive note-taking app with agentic intelligence, built for your life.",
     href: "https://github.com/vietbrosinaus/noteshell",
   },
 ];
@@ -91,7 +91,7 @@ export default async function Home() {
       <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-background/80 border-b border-border">
         <div className="max-w-[1200px] mx-auto px-6 h-14 flex items-center justify-between">
           <span className="font-mono text-sm tracking-tight font-medium">
-            vba
+            vietbrosinaus
           </span>
           <div className="flex items-center gap-8 font-mono text-xs tracking-wide text-muted">
             <a href="#projects" className="nav-link hover:text-foreground transition-colors duration-300">

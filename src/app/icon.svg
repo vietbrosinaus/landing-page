@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Subtle radial gradient background -->
+    <radialGradient id="bg" cx="50%" cy="40%" r="70%">
+      <stop offset="0%" stop-color="#1a1a1a"/>
+      <stop offset="100%" stop-color="#0a0a0a"/>
+    </radialGradient>
+
+    <!-- Soft glow behind letters -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <!-- Inset border highlight -->
+    <linearGradient id="border-grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fafafa" stop-opacity="0.12"/>
+      <stop offset="50%" stop-color="#fafafa" stop-opacity="0.03"/>
+      <stop offset="100%" stop-color="#fafafa" stop-opacity="0.08"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="512" height="512" rx="96" ry="96" fill="url(#bg)"/>
+
+  <!-- Inset border stroke -->
+  <rect x="3" y="3" width="506" height="506" rx="94" ry="94" fill="none" stroke="url(#border-grad)" stroke-width="1.5"/>
+
+  <!-- Letter glow layer (subtle backlight) -->
+  <g fill="#fafafa" opacity="0.15" filter="url(#glow)">
+    <path d="M60 88 L92 88 L128 192 L164 88 L196 88 L144 224 L112 224 Z"/>
+    <path fill-rule="evenodd" d="M308 88 L308 224 L384 224 Q424 224 424 192 Q424 164 396 156 Q420 148 420 124 Q420 88 384 88 Z M336 112 L336 144 L376 144 Q392 144 392 128 Q392 112 376 112 Z M336 168 L336 200 L380 200 Q400 200 400 184 Q400 168 380 168 Z"/>
+    <path d="M84 288 L172 288 L172 316 L142 316 L142 396 L172 396 L172 424 L84 424 L84 396 L114 396 L114 316 L84 316 Z"/>
+    <path fill-rule="evenodd" d="M384 288 L316 424 L348 424 L362 392 L406 392 L420 424 L452 424 L384 288 Z M384 332 L370 368 L398 368 Z"/>
+  </g>
+
+  <!-- Crisp letters -->
+  <g fill="#fafafa">
+    <path d="M60 88 L92 88 L128 192 L164 88 L196 88 L144 224 L112 224 Z"/>
+    <path fill-rule="evenodd" d="M308 88 L308 224 L384 224 Q424 224 424 192 Q424 164 396 156 Q420 148 420 124 Q420 88 384 88 Z M336 112 L336 144 L376 144 Q392 144 392 128 Q392 112 376 112 Z M336 168 L336 200 L380 200 Q400 200 400 184 Q400 168 380 168 Z"/>
+    <path d="M84 288 L172 288 L172 316 L142 316 L142 396 L172 396 L172 424 L84 424 L84 396 L114 396 L114 316 L84 316 Z"/>
+    <path fill-rule="evenodd" d="M384 288 L316 424 L348 424 L362 392 L406 392 L420 424 L452 424 L384 288 Z M384 332 L370 368 L398 368 Z"/>
+  </g>
+</svg>

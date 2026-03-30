@@ -16,6 +16,10 @@ export const metadata: Metadata = {
   title: "vietbrosinaus",
   description:
     "One of the most cracked dev teams providing actual free apps that actually benefit people.",
+  icons: {
+    icon: "/logo.svg",
+    apple: "/logo.svg",
+  },
 };
 
 export default function RootLayout({
