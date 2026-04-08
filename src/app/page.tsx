@@ -4,6 +4,14 @@ import ThemeToggle from "./theme-toggle";
 
 const people = [
   {
+    name: "Bach Tran",
+    handle: "@Theskrtnerd",
+    github: "Theskrtnerd",
+    role: "xineohperif",
+    avatar: "https://avatars.githubusercontent.com/u/88916722?v=4",
+    site: "https://theskrtnerd.github.io",
+  },
+  {
     name: "Elvis Tran",
     handle: "@elvistranhere",
     github: "elvistranhere",
@@ -12,12 +20,12 @@ const people = [
     site: "https://elvis-tran.is-a.dev",
   },
   {
-    name: "Bach Tran",
-    handle: "@Theskrtnerd",
-    github: "Theskrtnerd",
-    role: "xineohperif",
-    avatar: "https://avatars.githubusercontent.com/u/88916722?v=4",
-    site: "https://theskrtnerd.github.io",
+    name: "Minh Nguyen",
+    handle: "@nguyenhoangminh1106",
+    github: "nguyenhoangminh1106",
+    role: "Founding FDE @Lyra | ex-Microsoft",
+    avatar: "https://avatars.githubusercontent.com/u/114249185?v=4",
+    site: "https://github.com/nguyenhoangminh1106",
   },
 ];
 
