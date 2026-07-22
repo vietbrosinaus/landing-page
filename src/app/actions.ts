@@ -12,15 +12,21 @@ export async function sendMessage(formData: FormData) {
   }
 
   try {
-    await resend.emails.send({
-      from: "VBA Contact <onboarding@resend.dev>",
+    const { error } = await resend.emails.send({
+      from: "VBA Contact <contact@vietbrosinaus.com>",
       to: "tvbbd2@gmail.com",
       subject: "New message from vietbrosinaus.com",
       text: message.trim(),
     });
 
+    if (error) {
+      console.error("Resend rejected the email:", error);
+      return { error: "Failed to send. Try again later." };
+    }
+
     return { success: true };
-  } catch {
+  } catch (err) {
+    console.error("Resend request failed:", err);
     return { error: "Failed to send. Try again later." };
   }
 }
