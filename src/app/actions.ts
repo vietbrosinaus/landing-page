@@ -13,7 +13,7 @@ export async function sendMessage(formData: FormData) {
 
   try {
     const { error } = await resend.emails.send({
-      from: "VBA Contact <contact@vietbrosinaus.com>",
+      from: "vietbrosinaus <contact@vietbrosinaus.com>",
       to: "tvbbd2@gmail.com",
       subject: "New message from vietbrosinaus.com",
       text: message.trim(),
