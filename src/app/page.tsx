@@ -99,7 +99,8 @@ export default async function Home() {
       <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-background/80 border-b border-border">
         <div className="max-w-[1200px] mx-auto px-6 h-14 flex items-center justify-between">
           <span className="font-mono text-sm tracking-tight font-medium">
-            vietbrosinaus
+            <span className="sm:hidden">vbia</span>
+            <span className="hidden sm:inline">vietbrosinaus</span>
           </span>
           <div className="flex items-center gap-8 font-mono text-xs tracking-wide text-muted">
             <a href="#projects" className="nav-link hover:text-foreground transition-colors duration-300">
@@ -165,10 +166,7 @@ export default async function Home() {
       {/* Projects */}
       <section id="projects" className="px-6 max-w-[1200px] mx-auto py-32">
         <div className="animate-fade-up mb-20">
-          <span className="section-number font-mono uppercase text-xs tracking-widest text-muted">
-            01
-          </span>
-          <h2 className="text-5xl md:text-7xl font-bold tracking-[-0.03em] mt-2">
+          <h2 className="text-5xl md:text-7xl font-bold tracking-[-0.03em]">
             Projects
           </h2>
         </div>
@@ -212,10 +210,7 @@ export default async function Home() {
       {/* People */}
       <section id="people" className="px-6 max-w-[1200px] mx-auto py-32">
         <div className="animate-fade-up mb-20">
-          <span className="section-number font-mono uppercase text-xs tracking-widest text-muted">
-            02
-          </span>
-          <h2 className="text-5xl md:text-7xl font-bold tracking-[-0.03em] mt-2">
+          <h2 className="text-5xl md:text-7xl font-bold tracking-[-0.03em]">
             People
           </h2>
         </div>
@@ -280,10 +275,7 @@ export default async function Home() {
       {/* Contact */}
       <section id="contact" className="px-6 max-w-[1200px] mx-auto py-32">
         <div className="animate-fade-up mb-12">
-          <span className="section-number font-mono uppercase text-xs tracking-widest text-muted">
-            03
-          </span>
-          <h2 className="text-5xl md:text-7xl font-bold tracking-[-0.03em] mt-2">
+          <h2 className="text-5xl md:text-7xl font-bold tracking-[-0.03em]">
             Contact
           </h2>
         </div>
