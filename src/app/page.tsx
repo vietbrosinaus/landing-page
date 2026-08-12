@@ -20,14 +20,6 @@ const people = [
     avatar: "https://avatars.githubusercontent.com/u/40386529?v=4",
     site: "https://elvis-tran.is-a.dev",
   },
-  {
-    name: "Minh Nguyen",
-    handle: "@nguyenhoangminh1106",
-    github: "nguyenhoangminh1106",
-    role: "Founding FDE @Lyra | ex-Microsoft",
-    avatar: "https://avatars.githubusercontent.com/u/114249185?v=4",
-    site: "https://github.com/nguyenhoangminh1106",
-  },
 ];
 
 const projects = [
