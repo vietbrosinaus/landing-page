@@ -1,5 +1,6 @@
 import Image from "next/image";
 import ContactForm from "./contact-form";
+import KnotVortex from "./knot-vortex";
 import ThemeToggle from "./theme-toggle";
 
 const people = [
@@ -40,6 +41,56 @@ const projects = [
     name: "noteshell",
     description: "The interactive note-taking app with agentic intelligence, built for your life.",
     href: "https://github.com/vietbrosinaus/noteshell",
+  },
+];
+
+const support = [
+  {
+    number: "01",
+    title: "Weekly catch-ups",
+    description:
+      "Regular sessions to unblock you, review progress, and work out what to build next.",
+  },
+  {
+    number: "02",
+    title: "Product & UI/UX",
+    description:
+      "Honest feedback to make your app easier to use, easier to explain, and ready for real people.",
+  },
+  {
+    number: "03",
+    title: "Tech direction",
+    description:
+      "Practical advice on your stack, architecture, infrastructure, and the trade-offs that come with them.",
+  },
+  {
+    number: "04",
+    title: "Launch support",
+    description:
+      "Help with deployment, domains, production setup, and the details that turn a project into a product.",
+  },
+];
+
+const faqs = [
+  {
+    question: "Is this only for Vietnamese developers in Australia?",
+    answer:
+      "Nope! Most of us happen to be Vietnamese developers right now, but everyone’s welcome. VietBrosInAus is where we started—and as the community grows, we might even change the name to better reflect everyone in it.",
+  },
+  {
+    question: "What costs can you help with?",
+    answer:
+      "We’ll try to cover all the infrastructure and deployment costs—from platforms like Vercel and Cloudflare to finding and registering a solid domain name. You shouldn’t have to worry about the finances; you can just focus on building something great.",
+  },
+  {
+    question: "Can you help with AI development costs?",
+    answer:
+      "Yep. If your project needs AI tools or API credits to get off the ground, we may be able to help with those too.",
+  },
+  {
+    question: "Do I need to have an app already?",
+    answer:
+      "Not at all. You just need a clear idea and the commitment and ability to build it. A prototype, repo, or rough proof of concept definitely helps, but it’s not required.",
   },
 ];
 
@@ -109,6 +160,9 @@ export default async function Home() {
             <a href="#people" className="nav-link hover:text-foreground transition-colors duration-300">
               People
             </a>
+            <a href="#build" className="nav-link hidden sm:inline hover:text-foreground transition-colors duration-300">
+              Build
+            </a>
             <a href="#contact" className="nav-link hover:text-foreground transition-colors duration-300">
               Contact
             </a>
@@ -118,9 +172,9 @@ export default async function Home() {
       </nav>
 
       {/* Hero */}
-      <section className="min-h-dvh flex flex-col justify-center px-6 max-w-[1200px] mx-auto relative">
-        <div className="pt-14">
-          <h1 className="animate-fade-up text-[clamp(3rem,10vw,9rem)] font-bold leading-[0.9] tracking-[-0.04em] mb-8">
+      <section className="hero-section min-h-dvh flex flex-col justify-center px-6 max-w-[1200px] mx-auto relative">
+        <div className="hero-copy relative z-10 pt-14">
+          <h1 className="animate-fade-up text-[clamp(3rem,8vw,8rem)] font-bold leading-[0.9] tracking-[-0.04em] mb-8">
             <span className="hero-title">vietbros</span>
             <br />
             <span className="text-muted">inaus</span>
@@ -147,6 +201,10 @@ export default async function Home() {
               </svg>
             </a>
           </div>
+        </div>
+
+        <div className="hero-vortex" aria-hidden="true">
+          <KnotVortex />
         </div>
 
         {/* Scroll indicator */}
@@ -269,6 +327,132 @@ export default async function Home() {
               </a>
             );
           })}
+        </div>
+      </section>
+
+      {/* Build with us */}
+      <section id="build" className="px-6 max-w-[1200px] mx-auto py-32">
+        <div className="animate-fade-up grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-20 items-end mb-20">
+          <div>
+            <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted mb-5">
+              Build with us
+            </p>
+            <h2 className="text-5xl md:text-7xl font-bold tracking-[-0.03em] leading-[0.95]">
+              Bring the idea.
+              <br />
+              Build the product.
+            </h2>
+          </div>
+          <div>
+            <p className="text-lg md:text-xl leading-relaxed text-muted">
+              If you&apos;ve got an idea and the skills to build it, we&apos;ll
+              help you turn it from a personal project into a production-ready
+              app.
+            </p>
+            <a
+              href="#contact"
+              className="group mt-8 inline-flex items-center gap-2 font-mono text-sm border border-foreground px-5 py-2.5 hover:bg-foreground hover:text-background transition-all duration-300"
+            >
+              Pitch your idea
+              <svg
+                className="w-3.5 h-3.5 group-hover:translate-y-0.5 transition-transform duration-300"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path d="M12 5v14M19 12l-7 7-7-7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div className="grid sm:grid-cols-2 border-t border-l border-border mb-28">
+          {support.map((item, i) => (
+            <div
+              key={item.title}
+              className={`animate-fade-up delay-${i + 2} min-h-60 p-7 md:p-9 border-r border-b border-border`}
+            >
+              <span className="font-mono text-xs text-muted/60">
+                {item.number}
+              </span>
+              <h3 className="text-xl font-semibold tracking-tight mt-10">
+                {item.title}
+              </h3>
+              <p className="text-muted leading-relaxed mt-3 max-w-sm">
+                {item.description}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <div className="animate-fade-up border border-border bg-surface/40 p-7 md:p-12 mb-28">
+          <div className="grid lg:grid-cols-[0.65fr_1.35fr] gap-8 lg:gap-20">
+            <div>
+              <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted mb-4">
+                Our approach
+              </p>
+              <h3 className="text-3xl md:text-4xl font-bold tracking-[-0.03em]">
+                Free to start.
+                <br />
+                Built to grow.
+              </h3>
+            </div>
+            <div className="space-y-5 text-lg leading-relaxed text-muted">
+              <p>
+                We want the apps we support to be free or freemium, so people
+                can get real value from them without having to pay upfront.
+              </p>
+              <p>
+                In exchange, builders get the space, support, and technical
+                experience to ship something real. Building software is more
+                accessible than ever, and we want that to mean more useful
+                products are accessible to everyone too.
+              </p>
+              <p>
+                If an app takes off, it can always add thoughtful premium
+                features later to support its growth—the useful core should
+                still stay open to everyone.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div className="animate-fade-up">
+            <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted mb-4">
+              The details
+            </p>
+            <h3 className="text-4xl md:text-5xl font-bold tracking-[-0.03em]">
+              FAQs
+            </h3>
+          </div>
+          <div className="mt-12 md:mt-16 divide-y divide-border border-y border-border">
+            {faqs.map((faq, i) => (
+              <details
+                key={faq.question}
+                className={`faq-item animate-fade-up delay-${i + 2} group`}
+              >
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-8 py-7 md:py-8 [&::-webkit-details-marker]:hidden">
+                  <span className="text-lg md:text-xl font-medium leading-relaxed">
+                    {faq.question}
+                  </span>
+                  <span
+                    aria-hidden="true"
+                    className="relative h-5 w-5 shrink-0 text-muted group-hover:text-foreground transition-colors duration-300"
+                  >
+                    <span className="absolute left-0 top-1/2 h-px w-5 bg-current" />
+                    <span className="faq-plus absolute left-1/2 top-0 h-5 w-px bg-current transition-transform duration-300" />
+                  </span>
+                </summary>
+                <div className="faq-answer grid">
+                  <p className="overflow-hidden max-w-3xl pb-7 md:pb-8 text-muted text-lg leading-relaxed">
+                    {faq.answer}
+                  </p>
+                </div>
+              </details>
+            ))}
+          </div>
         </div>
       </section>
 
