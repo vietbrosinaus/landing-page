@@ -3,6 +3,8 @@ import ContactForm from "./contact-form";
 import KnotVortex from "./knot-vortex";
 import ThemeToggle from "./theme-toggle";
 
+const SHOW_PEOPLE = false;
+
 const people = [
   {
     name: "Bach Tran",
@@ -129,12 +131,14 @@ async function getGitHubStats(username: string): Promise<GitHubStats | null> {
 
 export default async function Home() {
   const statsMap = new Map<string, GitHubStats | null>();
-  await Promise.all(
-    people.map(async (p) => {
-      const stats = await getGitHubStats(p.github);
-      statsMap.set(p.github, stats);
-    })
-  );
+  if (SHOW_PEOPLE) {
+    await Promise.all(
+      people.map(async (p) => {
+        const stats = await getGitHubStats(p.github);
+        statsMap.set(p.github, stats);
+      })
+    );
+  }
 
   return (
     <div className="min-h-dvh">
@@ -149,9 +153,11 @@ export default async function Home() {
             <a href="#projects" className="nav-link hover:text-foreground transition-colors duration-300">
               Projects
             </a>
-            <a href="#people" className="nav-link hover:text-foreground transition-colors duration-300">
-              People
-            </a>
+            {SHOW_PEOPLE && (
+              <a href="#people" className="nav-link hover:text-foreground transition-colors duration-300">
+                People
+              </a>
+            )}
             <a href="#build" className="nav-link hidden sm:inline hover:text-foreground transition-colors duration-300">
               Build
             </a>
@@ -258,7 +264,8 @@ export default async function Home() {
       </section>
 
       {/* People */}
-      <section id="people" className="px-6 max-w-[1200px] mx-auto py-32">
+      {SHOW_PEOPLE && (
+        <section id="people" className="px-6 max-w-[1200px] mx-auto py-32">
         <div className="animate-fade-up mb-20">
           <h2 className="text-5xl md:text-7xl font-bold tracking-[-0.03em]">
             People
@@ -320,7 +327,8 @@ export default async function Home() {
             );
           })}
         </div>
-      </section>
+        </section>
+      )}
 
       {/* Build with us */}
       <section id="build" className="px-6 max-w-[1200px] mx-auto py-32">
