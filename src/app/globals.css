@@ -80,6 +80,22 @@ html {
 .delay-5 { animation-delay: 0.5s; }
 .delay-6 { animation-delay: 0.6s; }
 
+/* ── Navigation brand mark ── */
+.brand-mark {
+  width: 1.75rem;
+  aspect-ratio: 190 / 161;
+  flex: none;
+  background: currentColor;
+  -webkit-mask: url("/v-mark.svg") center / contain no-repeat;
+  mask: url("/v-mark.svg") center / contain no-repeat;
+}
+
+@media (min-width: 640px) {
+  .brand-mark {
+    width: 2rem;
+  }
+}
+
 /* ── Nav link animated underline ── */
 .nav-link {
   position: relative;

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import ContactForm from "./contact-form";
 import KnotVortex from "./knot-vortex";
 import ThemeToggle from "./theme-toggle";
@@ -144,12 +145,16 @@ export default async function Home() {
     <div className="min-h-dvh">
       {/* Nav */}
       <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-background/80 border-b border-border">
-        <div className="max-w-[1200px] mx-auto px-6 h-14 flex items-center justify-between">
-          <span className="font-mono text-sm tracking-tight font-medium">
-            <span className="sm:hidden">vbia</span>
+        <div className="max-w-[1200px] mx-auto px-6 h-16 sm:h-[4.5rem] flex items-center justify-between">
+          <Link
+            href="/"
+            aria-label="Viet Bros in Australia home"
+            className="flex items-center gap-2.5 sm:gap-3 font-mono text-sm sm:text-base tracking-tight font-medium"
+          >
+            <span className="brand-mark sm:hidden" aria-hidden="true" />
             <span className="hidden sm:inline">vietbrosinaus</span>
-          </span>
-          <div className="flex items-center gap-8 font-mono text-xs tracking-wide text-muted">
+          </Link>
+          <div className="flex items-center gap-5 sm:gap-9 font-mono text-xs sm:text-sm tracking-wide text-muted">
             <a href="#projects" className="nav-link hover:text-foreground transition-colors duration-300">
               Projects
             </a>
@@ -171,7 +176,7 @@ export default async function Home() {
 
       {/* Hero */}
       <section className="hero-section min-h-dvh flex flex-col justify-center px-6 max-w-[1200px] mx-auto relative">
-        <div className="hero-copy relative z-10 pt-14">
+        <div className="hero-copy relative z-10 pt-16 sm:pt-[4.5rem]">
           <h1 className="animate-fade-up text-[clamp(3rem,8vw,8rem)] font-bold leading-[0.9] tracking-[-0.04em] mb-8">
             <span className="hero-title">vietbros</span>
             <br />
