@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">VietBrosInAus quarter-ring logo</title>
+  <desc id="desc">Four bold initials follow the four quarters of an open circular ring.</desc>
+  <circle cx="256" cy="256" r="218" fill="none" stroke="#0A0A0A" stroke-width="28"/>
+  <path d="M256 56v400M56 256h400" fill="none" stroke="#0A0A0A" stroke-width="12" stroke-linecap="round"/>
+  <g fill="#0A0A0A">
+    <path d="M78 103h38l32 88 32-88h38l-52 121h-36L78 103Z"/>
+    <path fill-rule="evenodd" d="M294 99h70c40 0 60 14 60 40 0 15-8 26-22 32 18 6 27 19 27 36 0 28-22 42-65 42h-70V99Zm35 29v29h31c17 0 26-5 26-15s-9-14-26-14h-31Zm0 56v35h35c18 0 27-6 27-18 0-11-9-17-27-17h-35Z"/>
+    <path d="M85 291h105v31h-34v75h34v31H85v-31h34v-75H85v-31Z"/>
+    <path fill-rule="evenodd" d="M345 285h36l58 144h-39l-10-29h-56l-10 29h-38l59-144Zm17 39-18 48h36l-18-48Z"/>
+  </g>
+  <circle cx="256" cy="256" r="18" fill="#0A0A0A"/>
+</svg>

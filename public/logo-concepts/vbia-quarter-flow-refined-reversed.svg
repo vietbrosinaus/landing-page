@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Refined VietBrosInAus quarter-flow reversed logo</title>
+  <desc id="desc">A white circular VBIA monogram for use on dark backgrounds.</desc>
+  <circle cx="256" cy="256" r="232" fill="#FAFAFA"/>
+  <path d="M256 48v416M48 256h416" fill="none" stroke="#0A0A0A" stroke-width="16" stroke-linecap="round"/>
+  <g fill="#0A0A0A">
+    <path d="M78 112h38l36 82 36-82h38l-55 116h-38L78 112Z"/>
+    <path fill-rule="evenodd" d="M294 103h70c42 0 63 14 63 40 0 15-8 26-23 32 19 7 29 19 29 37 0 27-22 41-66 41h-73V103Zm37 29v29h31c18 0 27-5 27-15 0-9-9-14-27-14h-31Zm0 56v35h35c19 0 29-6 29-18 0-11-10-17-29-17h-35Z"/>
+    <path d="M91 294h122v32h-42v72h42v32H91v-32h42v-72H91v-32Z"/>
+    <path fill-rule="evenodd" d="M345 294h40l53 136h-40l-9-28h-50l-9 28h-40l55-136Zm19 43-16 36h32l-16-36Z"/>
+  </g>
+</svg>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">VietBrosInAus solid letter-built circle logo</title>
+  <desc id="desc">Four bold custom initials interlock so their outer edges create a circular silhouette.</desc>
+  <defs><clipPath id="disc"><circle cx="256" cy="256" r="232"/></clipPath></defs>
+  <g fill="#0A0A0A" clip-path="url(#disc)">
+    <!-- V touches the top and left of the shared circle -->
+    <path d="M-4 24h93l67 169 67-169h78L190 250h-79L-4 24Z"/>
+    <!-- B's two bowls form the upper-right edge -->
+    <path fill-rule="evenodd" d="M261 18h116c88 0 132 31 132 91 0 34-18 59-53 74 43 14 64 44 64 88H261V18Zm70 56v72h52c34 0 51-12 51-36 0-24-17-36-51-36h-52Zm0 122v74h61c37 0 55-12 55-37 0-24-18-37-55-37h-61Z"/>
+    <!-- I anchors the lower-left edge -->
+    <path d="M-8 263h239v66h-82v117h82v66H-8v-66h82V329H-8v-66Z"/>
+    <!-- A's legs complete the bottom and right edge -->
+    <path fill-rule="evenodd" d="M354 260h80l107 252h-82l-19-51h-102l-19 51h-81l116-252Zm36 75-29 67h58l-29-67Z"/>
+  </g>
+  <path d="M256 38v436M38 256h436" fill="none" stroke="#FAFAFA" stroke-width="16"/>
+</svg>

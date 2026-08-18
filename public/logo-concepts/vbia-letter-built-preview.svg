@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 660" role="img" aria-labelledby="title desc">
+  <title id="title">Two letter-built VBIA circle concepts</title>
+  <desc id="desc">An open monoline construction and a solid interlocking construction.</desc>
+  <rect width="1180" height="660" rx="36" fill="#F4F4F2"/>
+  <text x="76" y="74" fill="#0A0A0A" font-family="Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="3">THE LETTERS BUILD THE CIRCLE</text>
+  <g transform="translate(78 108) scale(.78)" fill="none" stroke="#0A0A0A" stroke-width="34" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M256 34A222 222 0 0 0 34 256 M76 112l76 118 76-118"/><path d="M282 48v190h78c50 0 90-26 90-66 0-29-22-48-57-54 26-7 42-25 42-48 0-15-5-29-14-40 M282 118h92 M282 177h106"/><path d="M34 282a222 222 0 0 0 222 196 M70 300h164 M152 300v142 M70 442h164"/><path d="M282 478a222 222 0 0 0 196-222 M293 442l78-154 78 154 M324 384h94"/>
+  </g>
+  <g transform="translate(656 108) scale(.78)">
+    <defs><clipPath id="preview-disc"><circle cx="256" cy="256" r="232"/></clipPath></defs>
+    <g fill="#0A0A0A" clip-path="url(#preview-disc)"><path d="M-4 24h93l67 169 67-169h78L190 250h-79L-4 24Z"/><path fill-rule="evenodd" d="M261 18h116c88 0 132 31 132 91 0 34-18 59-53 74 43 14 64 44 64 88H261V18Zm70 56v72h52c34 0 51-12 51-36 0-24-17-36-51-36h-52Zm0 122v74h61c37 0 55-12 55-37 0-24-18-37-55-37h-61Z"/><path d="M-8 263h239v66h-82v117h82v66H-8v-66h82V329H-8v-66Z"/><path fill-rule="evenodd" d="M354 260h80l107 252h-82l-19-51h-102l-19 51h-81l116-252Zm36 75-29 67h58l-29-67Z"/></g><path d="M256 38v436M38 256h436" fill="none" stroke="#FAFAFA" stroke-width="16"/>
+  </g>
+  <g fill="#0A0A0A" font-family="Arial, sans-serif"><text x="76" y="572" font-size="23" font-weight="700">04A · OPEN CONSTRUCTION</text><text x="654" y="572" font-size="23" font-weight="700">04B · SOLID CONSTRUCTION</text></g>
+  <g fill="#666" font-family="Arial, sans-serif" font-size="16"><text x="76" y="604">The letter strokes continue into the circumference.</text><text x="654" y="604">The letter edges create the circular silhouette.</text></g>
+</svg>

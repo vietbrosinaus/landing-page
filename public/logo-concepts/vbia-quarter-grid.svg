@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">VietBrosInAus quarter-grid logo</title>
+  <desc id="desc">A black circle divided into four rounded quarters containing the letters V, B, I and A.</desc>
+  <g fill="#0A0A0A">
+    <path d="M256 24C128 24 24 128 24 256h216V24h16Z"/>
+    <path d="M272 24v216h216C488 120.7 391.3 24 272 24Z"/>
+    <path d="M24 272c0 119.3 96.7 216 216 216V272H24Z"/>
+    <path d="M272 272v216c119.3 0 216-96.7 216-216H272Z"/>
+  </g>
+  <g fill="#FAFAFA">
+    <path d="M73 93h42l34 95 34-95h42l-57 132h-38L73 93Z"/>
+    <path fill-rule="evenodd" d="M299 87h77c43 0 65 16 65 44 0 16-8 28-24 35 20 7 30 21 30 40 0 30-24 45-71 45h-77V87Zm39 32v32h34c19 0 28-5 28-16s-9-16-28-16h-34Zm0 61v38h38c20 0 30-6 30-19s-10-19-30-19h-38Z"/>
+    <path d="M83 305h114v34h-37v82h37v34H83v-34h37v-82H83v-34Z"/>
+    <path fill-rule="evenodd" d="M355 298h39l62 157h-42l-11-31h-60l-11 31h-41l64-157Zm18 42-19 53h38l-19-53Z"/>
+  </g>
+</svg>

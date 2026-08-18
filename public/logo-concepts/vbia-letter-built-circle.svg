@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">VietBrosInAus letter-built circle logo</title>
+  <desc id="desc">The custom strokes of V, B, I and A connect to form one circular monogram without a separate enclosing ring.</desc>
+  <g fill="none" stroke="#0A0A0A" stroke-width="34" stroke-linecap="round" stroke-linejoin="round">
+    <!-- V: its left arm continues into the upper-left circumference -->
+    <path d="M256 34A222 222 0 0 0 34 256 M76 112l76 118 76-118"/>
+    <!-- B: its bowls create the upper-right circumference -->
+    <path d="M282 48v190h78c50 0 90-26 90-66 0-29-22-48-57-54 26-7 42-25 42-48 0-15-5-29-14-40 M282 118h92 M282 177h106"/>
+    <!-- I: its bars carry the lower-left circumference -->
+    <path d="M34 282a222 222 0 0 0 222 196 M70 300h164 M152 300v142 M70 442h164"/>
+    <!-- A: its right leg completes the lower-right circumference -->
+    <path d="M282 478a222 222 0 0 0 196-222 M293 442l78-154 78 154 M324 384h94"/>
+  </g>
+</svg>

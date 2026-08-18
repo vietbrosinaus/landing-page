@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1680 660" role="img" aria-labelledby="title desc">
+  <title id="title">Three VietBrosInAus circular logo concepts</title>
+  <desc id="desc">Three black and white marks labelled Quarter Grid, Quarter Ring, and Quarter Flow.</desc>
+  <rect width="1680" height="660" rx="36" fill="#F4F4F2"/>
+  <text x="84" y="78" fill="#0A0A0A" font-family="Arial, sans-serif" font-size="30" font-weight="700" letter-spacing="3">VIETBROSINAUS · VBIA</text>
+  <g transform="translate(84 112) scale(.82)">
+    <g fill="#0A0A0A"><path d="M256 24C128 24 24 128 24 256h216V24h16Z"/><path d="M272 24v216h216C488 120.7 391.3 24 272 24Z"/><path d="M24 272c0 119.3 96.7 216 216 216V272H24Z"/><path d="M272 272v216c119.3 0 216-96.7 216-216H272Z"/></g>
+    <g fill="#FAFAFA"><path d="M73 93h42l34 95 34-95h42l-57 132h-38L73 93Z"/><path fill-rule="evenodd" d="M299 87h77c43 0 65 16 65 44 0 16-8 28-24 35 20 7 30 21 30 40 0 30-24 45-71 45h-77V87Zm39 32v32h34c19 0 28-5 28-16s-9-16-28-16h-34Zm0 61v38h38c20 0 30-6 30-19s-10-19-30-19h-38Z"/><path d="M83 305h114v34h-37v82h37v34H83v-34h37v-82H83v-34Z"/><path fill-rule="evenodd" d="M355 298h39l62 157h-42l-11-31h-60l-11 31h-41l64-157Zm18 42-19 53h38l-19-53Z"/></g>
+  </g>
+  <g transform="translate(584 112) scale(.82)">
+    <circle cx="256" cy="256" r="218" fill="none" stroke="#0A0A0A" stroke-width="28"/><path d="M256 56v400M56 256h400" fill="none" stroke="#0A0A0A" stroke-width="12" stroke-linecap="round"/>
+    <g fill="#0A0A0A"><path d="M78 103h38l32 88 32-88h38l-52 121h-36L78 103Z"/><path fill-rule="evenodd" d="M294 99h70c40 0 60 14 60 40 0 15-8 26-22 32 18 6 27 19 27 36 0 28-22 42-65 42h-70V99Zm35 29v29h31c17 0 26-5 26-15s-9-14-26-14h-31Zm0 56v35h35c18 0 27-6 27-18 0-11-9-17-27-17h-35Z"/><path d="M85 291h105v31h-34v75h34v31H85v-31h34v-75H85v-31Z"/><path fill-rule="evenodd" d="M345 285h36l58 144h-39l-10-29h-56l-10 29h-38l59-144Zm17 39-18 48h36l-18-48Z"/></g><circle cx="256" cy="256" r="18" fill="#0A0A0A"/>
+  </g>
+  <g transform="translate(1084 112) scale(.82)">
+    <circle cx="256" cy="256" r="232" fill="#0A0A0A"/><path d="M244 24h24v179c0 29 12 41 41 41h179v24H309c-29 0-41 12-41 41v179h-24V309c0-29-12-41-41-41H24v-24h179c29 0 41-12 41-41V24Z" fill="#FAFAFA"/>
+    <g fill="#FAFAFA"><path d="M67 91h40l34 93 34-93h40l-55 129h-38L67 91Z"/><path fill-rule="evenodd" d="M301 89h70c41 0 61 15 61 41 0 15-7 26-22 33 18 6 27 19 27 37 0 29-22 43-66 43h-70V89Zm36 30v30h31c18 0 27-5 27-15s-9-15-27-15h-31Zm0 57v36h35c19 0 28-6 28-18s-9-18-28-18h-35Z"/><path d="M77 290h108v32h-35v78h35v32H77v-32h35v-78H77v-32Z"/><path fill-rule="evenodd" d="M346 286h37l59 147h-40l-10-30h-58l-10 30h-39l61-147Zm17 40-18 49h36l-18-49Z"/></g>
+  </g>
+  <g fill="#0A0A0A" font-family="Arial, sans-serif"><text x="84" y="594" font-size="24" font-weight="700">01 · QUARTER GRID</text><text x="584" y="594" font-size="24" font-weight="700">02 · QUARTER RING</text><text x="1084" y="594" font-size="24" font-weight="700">03 · QUARTER FLOW</text></g>
+  <g fill="#666" font-family="Arial, sans-serif" font-size="16"><text x="84" y="624">Bold · direct · digital</text><text x="584" y="624">Open · social · precise</text><text x="1084" y="624">Connected · dynamic · distinct</text></g>
+</svg>
