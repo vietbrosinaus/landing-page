@@ -224,8 +224,27 @@ export default async function Home() {
         </div>
       </section>
 
+      {/* Vision */}
+      <section id="vision" className="px-6 max-w-[1200px] mx-auto py-24 md:py-32">
+        <div className="animate-fade-up border-t border-border pt-8 md:pt-10 grid md:grid-cols-[0.35fr_1fr] gap-8 md:gap-16">
+          <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted">
+              Our vision
+          </p>
+          <div>
+            <h2 className="text-3xl md:text-5xl font-bold tracking-[-0.035em] leading-tight">
+              We make software worth using.
+            </h2>
+            <p className="mt-6 max-w-2xl text-lg md:text-xl leading-relaxed text-muted">
+              We&apos;re a small collective helping builders turn personally
+              useful prototypes into focused, polished, and accessible products
+              through human judgment and community.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Projects */}
-      <section id="projects" className="px-6 max-w-[1200px] mx-auto py-32">
+      <section id="projects" className="px-6 max-w-[1200px] mx-auto py-24 md:py-32">
         <div className="animate-fade-up mb-20">
           <h2 className="text-5xl md:text-7xl font-bold tracking-[-0.03em]">
             Projects
