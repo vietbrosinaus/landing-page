@@ -529,9 +529,11 @@ export default async function Home() {
           <span className="font-mono text-xs text-muted">
             vietbrosinaus &copy; {new Date().getFullYear()}
           </span>
-          <span className="font-mono text-xs text-muted/50">
-            built different
-          </span>
+          <p className="flex items-center gap-1 font-mono text-xs text-muted">
+            <span>Made with</span>
+            <span className="footer-heart" aria-hidden="true" />
+            <span>in Australia</span>
+          </p>
         </div>
       </footer>
     </div>

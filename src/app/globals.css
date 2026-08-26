@@ -81,13 +81,21 @@ html {
 .delay-6 { animation-delay: 0.6s; }
 
 /* ── Navigation brand mark ── */
-.brand-mark {
-  width: 1.75rem;
+.brand-mark,
+.footer-heart {
   aspect-ratio: 190 / 161;
   flex: none;
   background: currentColor;
   -webkit-mask: url("/v-mark.svg") center / contain no-repeat;
   mask: url("/v-mark.svg") center / contain no-repeat;
+}
+
+.brand-mark {
+  width: 1.75rem;
+}
+
+.footer-heart {
+  height: 0.875rem;
 }
 
 @media (min-width: 640px) {
