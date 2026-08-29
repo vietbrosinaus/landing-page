@@ -175,34 +175,36 @@ export default async function Home() {
       </nav>
 
       {/* Hero */}
-      <section className="hero-section min-h-dvh flex flex-col justify-center px-6 max-w-[1200px] mx-auto relative">
-        <div className="hero-copy relative z-10 pt-16 sm:pt-[4.5rem]">
-          <h1 className="animate-fade-up text-[clamp(3rem,8vw,8rem)] font-bold leading-[0.9] tracking-[-0.04em] mb-8">
-            <span className="hero-title">vietbros</span>
-            <br />
-            <span className="text-muted">inaus</span>
-          </h1>
-          <p className="animate-fade-up delay-2 max-w-lg text-lg md:text-xl leading-relaxed text-muted">
-            We&apos;re Vietnamese devs based in Australia who believe useful
-            software should be free. Everything we build is open-source and
-            made for real people.
-          </p>
-          <div className="animate-fade-up delay-3 mt-12 flex items-center gap-4">
-            <a
-              href="#projects"
-              className="group inline-flex items-center gap-2 font-mono text-sm border border-foreground px-5 py-2.5 hover:bg-foreground hover:text-background transition-all duration-300"
-            >
-              See our work
-              <svg
-                className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform duration-300"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
+      <section className="hero-section min-h-dvh flex flex-col justify-center relative">
+        <div className="relative z-10 w-full max-w-[1200px] mx-auto px-6">
+          <div className="hero-copy pt-16 sm:pt-[4.5rem]">
+            <h1 className="animate-fade-up text-[clamp(3rem,8vw,8rem)] font-bold leading-[0.9] tracking-[-0.04em] mb-8">
+              <span className="hero-title">vietbros</span>
+              <br />
+              <span className="text-muted">inaus</span>
+            </h1>
+            <p className="animate-fade-up delay-2 max-w-lg text-lg md:text-xl leading-relaxed text-muted">
+              We&apos;re Vietnamese devs based in Australia who believe useful
+              software should be free. Everything we build is open-source and
+              made for real people.
+            </p>
+            <div className="animate-fade-up delay-3 mt-12 flex items-center gap-4">
+              <a
+                href="#projects"
+                className="group inline-flex items-center gap-2 font-mono text-sm border border-foreground px-5 py-2.5 hover:bg-foreground hover:text-background transition-all duration-300"
               >
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </a>
+                See our work
+                <svg
+                  className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform duration-300"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
 
