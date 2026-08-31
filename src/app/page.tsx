@@ -27,15 +27,40 @@ const people = [
 
 const projects = [
   {
-    name: "karaoke-room",
+    name: "Karaoke Now",
+    category: "Entertainment",
+    image: "/project-screenshots/karaoke.png",
     description:
-      "Real-time online karaoke rooms. Join with a code, share your audio, and sing with friends.",
-    href: "https://github.com/vietbrosinaus/karaoke-room",
+      "Open a room, queue a song, and sing together from anywhere.",
+    href: "https://karaokenow.vietbrosinaus.com",
+    domain: "karaokenow.vietbrosinaus.com",
   },
   {
-    name: "noteshell",
-    description: "The interactive note-taking app with agentic intelligence, built for your life.",
-    href: "https://github.com/vietbrosinaus/noteshell",
+    name: "PriceCheck AU",
+    category: "Shopping",
+    image: "/project-screenshots/price.png",
+    description:
+      "Compare Australian grocery prices side by side and find the best value per unit.",
+    href: "https://price-check-au.vercel.app",
+    domain: "price-check-au.vercel.app",
+  },
+  {
+    name: "Plan2Go",
+    category: "Travel",
+    image: "/project-screenshots/travel.png",
+    description:
+      "Build a realistic multi-day itinerary with travel time, opening hours, and maps.",
+    href: "https://plan2go-sandy.vercel.app",
+    domain: "plan2go-sandy.vercel.app",
+  },
+  {
+    name: "Voice Debrief",
+    category: "Productivity",
+    image: "/project-screenshots/voice.png",
+    description:
+      "Talk through your day and turn it into structured reflections and a plan for tomorrow.",
+    href: "https://voice-debrief.vercel.app",
+    domain: "voice-debrief.vercel.app",
   },
 ];
 
@@ -246,35 +271,56 @@ export default async function Home() {
       </section>
 
       {/* Projects */}
-      <section id="projects" className="px-6 max-w-[1200px] mx-auto py-24 md:py-32">
-        <div className="animate-fade-up mb-20">
+      <section id="projects" className="scroll-mt-16 sm:scroll-mt-[4.5rem] px-6 max-w-[1200px] mx-auto py-24 md:py-32">
+        <div className="animate-fade-up mb-12 md:mb-16 grid md:grid-cols-[1fr_0.55fr] gap-6 md:items-end">
           <h2 className="text-5xl md:text-7xl font-bold tracking-[-0.03em]">
             Projects
           </h2>
+          <p className="max-w-md text-base md:text-lg leading-relaxed text-muted md:justify-self-end">
+            Useful ideas, shaped into products you can open and use today.
+          </p>
         </div>
 
-        <div className="space-y-0 divide-y divide-border">
+        <div className="grid md:grid-cols-2 gap-4 md:gap-5">
           {projects.map((project, i) => (
             <a
               key={project.name}
               href={project.href}
               target="_blank"
               rel="noopener noreferrer"
-              className={`project-row animate-fade-up delay-${i + 2} group flex flex-col md:flex-row md:items-center justify-between gap-4 md:gap-12 py-10 first:pt-0 pl-0 hover:pl-2 transition-all duration-300`}
+              aria-label={`Open ${project.name}`}
+              className={`project-card animate-fade-up delay-${i + 2} group`}
             >
-              <div className="flex-1">
-                <h3 className="font-mono text-2xl md:text-3xl font-semibold tracking-tight">
+              <div className="project-preview">
+                <Image
+                  src={project.image}
+                  alt={`${project.name} app interface`}
+                  width={1280}
+                  height={720}
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  className="h-full w-full object-cover object-top"
+                />
+              </div>
+
+              <div className="project-card-copy">
+                <div className="font-mono text-[0.68rem] uppercase tracking-[0.16em] text-muted">
+                  <span>{project.category}</span>
+                </div>
+                <h3 className="mt-5 text-2xl md:text-3xl font-semibold tracking-[-0.025em]">
                   {project.name}
                 </h3>
-                <p className="text-muted mt-2 max-w-md leading-relaxed">
+                <p className="text-muted mt-3 max-w-md leading-relaxed">
                   {project.description}
                 </p>
-              </div>
-              <div className="shrink-0">
-                <span className="inline-flex items-center gap-2 font-mono text-sm text-muted group-hover:text-foreground transition-colors duration-300">
-                  View on GitHub
+
+                <div className="mt-8 pt-5 border-t border-border flex items-center justify-between gap-4">
+                  <span className="font-mono text-xs text-muted truncate">
+                    {project.domain}
+                  </span>
+                  <span className="shrink-0 inline-flex items-center gap-2 font-mono text-sm font-medium">
+                    Open app
                   <svg
-                    className="w-4 h-4 -translate-x-1 group-hover:translate-x-0 opacity-0 group-hover:opacity-100 transition-all duration-300"
+                    className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -282,7 +328,8 @@ export default async function Home() {
                   >
                     <path d="M5 12h14M12 5l7 7-7 7" />
                   </svg>
-                </span>
+                  </span>
+                </div>
               </div>
             </a>
           ))}

@@ -227,26 +227,49 @@ html {
   animation: scroll-hint 2.4s cubic-bezier(0.45, 0, 0.55, 1) infinite;
 }
 
-/* ── Project row hover bar ── */
-.project-row {
+/* ── Project showcase ── */
+.project-card {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  background: var(--background);
+  transition: border-color 0.4s ease;
 }
 
-.project-row::before {
-  content: "";
-  position: absolute;
-  left: -24px;
-  top: 50%;
-  width: 3px;
-  height: 0;
-  background: var(--foreground);
-  transform: translateY(-50%);
-  transition: height 0.35s cubic-bezier(0.22, 1, 0.36, 1);
-  border-radius: 2px;
+.project-card:hover {
+  border-color: color-mix(in srgb, var(--foreground) 35%, var(--border));
 }
 
-.project-row:hover::before {
-  height: 40%;
+.project-card-copy {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 1.5rem;
+}
+
+.project-card-copy > p {
+  flex: 1;
+}
+
+.project-preview {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  margin: 0.55rem 0.55rem 0;
+  overflow: hidden;
+  border-radius: 0.7rem;
+  background: var(--surface);
+}
+
+.project-preview img {
+  filter: grayscale(1);
+  transition: filter 0.55s ease;
+}
+
+.project-card:hover .project-preview img {
+  filter: grayscale(0);
 }
 
 /* ── People card glow ── */
