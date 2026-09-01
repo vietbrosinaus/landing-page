@@ -255,16 +255,16 @@ export default async function Home() {
       <section id="vision" className="px-6 max-w-[1200px] mx-auto py-24 md:py-32">
         <div className="animate-fade-up border-t border-border pt-8 md:pt-10 grid md:grid-cols-[0.35fr_1fr] gap-8 md:gap-16">
           <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted">
-              Our vision
+            Our vision
           </p>
           <div>
             <h2 className="text-3xl md:text-5xl font-bold tracking-[-0.035em] leading-tight">
               We make software worth using.
             </h2>
             <p className="mt-6 max-w-2xl text-lg md:text-xl leading-relaxed text-muted">
-              We&apos;re a small collective helping builders turn personally
-              useful prototypes into focused, polished, and accessible products
-              through human judgment and community.
+              We&apos;re a small collective helping builders turn personally useful
+              prototypes into focused, polished, and accessible products through
+              human judgment and community.
             </p>
           </div>
         </div>
@@ -272,13 +272,10 @@ export default async function Home() {
 
       {/* Projects */}
       <section id="projects" className="scroll-mt-16 sm:scroll-mt-[4.5rem] px-6 max-w-[1200px] mx-auto py-24 md:py-32">
-        <div className="animate-fade-up mb-12 md:mb-16 grid md:grid-cols-[1fr_0.55fr] gap-6 md:items-end">
+        <div className="animate-fade-up mb-12 md:mb-16">
           <h2 className="text-5xl md:text-7xl font-bold tracking-[-0.03em]">
             Projects
           </h2>
-          <p className="max-w-md text-base md:text-lg leading-relaxed text-muted md:justify-self-end">
-            Useful ideas, shaped into products you can open and use today.
-          </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-4 md:gap-5">
@@ -407,9 +404,6 @@ export default async function Home() {
       <section id="build" className="px-6 max-w-[1200px] mx-auto py-32">
         <div className="animate-fade-up grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-20 items-end mb-20">
           <div>
-            <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted mb-5">
-              Build with us
-            </p>
             <h2 className="text-5xl md:text-7xl font-bold tracking-[-0.03em] leading-[0.95]">
               Bring the idea.
               <br />
@@ -462,9 +456,6 @@ export default async function Home() {
         <div className="animate-fade-up border border-border bg-surface/40 p-7 md:p-12 mb-28">
           <div className="grid lg:grid-cols-[0.65fr_1.35fr] gap-8 lg:gap-20">
             <div>
-              <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted mb-4">
-                Our approach
-              </p>
               <h3 className="text-3xl md:text-4xl font-bold tracking-[-0.03em]">
                 Free to start.
                 <br />
@@ -493,9 +484,6 @@ export default async function Home() {
 
         <div>
           <div className="animate-fade-up">
-            <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted mb-4">
-              The details
-            </p>
             <h3 className="text-4xl md:text-5xl font-bold tracking-[-0.03em]">
               FAQs
             </h3>
