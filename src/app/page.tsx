@@ -63,11 +63,11 @@ const projects = [
     domain: "plan2go-sandy.vercel.app",
   },
   {
-    name: "Voice Debrief",
+    name: "What I Mean",
     category: "Productivity",
-    image: "/project-screenshots/voice.png",
+    image: "/project-screenshots/what-i-mean.jpg",
     description:
-      "Talk through your day and turn it into structured reflections and a plan for tomorrow.",
+      "Think out loud by text or voice while a thoughtful AI helps you find what really matters.",
     href: "https://voice-debrief.vercel.app",
     domain: "voice-debrief.vercel.app",
   },

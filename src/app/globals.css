@@ -52,6 +52,15 @@ body::after {
   opacity: 0.04;
 }
 
+.theme-icon-sun,
+.dark .theme-icon-moon {
+  display: none;
+}
+
+.dark .theme-icon-sun {
+  display: block;
+}
+
 /* Smooth scroll */
 html {
   scroll-behavior: smooth;
