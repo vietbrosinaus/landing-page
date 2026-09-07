@@ -27,6 +27,15 @@ const people = [
 
 const projects = [
   {
+    name: "Sanguosha Online",
+    category: "Game",
+    image: "/project-screenshots/sanguosha.jpg",
+    description:
+      "Play Tam Quốc Sát Nội Chiến with friends in a bilingual Vietnamese and English web experience.",
+    href: "https://sanguosha-online.vercel.app",
+    domain: "sanguosha-online.vercel.app",
+  },
+  {
     name: "Karaoke Now",
     category: "Entertainment",
     image: "/project-screenshots/karaoke.png",
