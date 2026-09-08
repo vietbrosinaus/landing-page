@@ -277,7 +277,19 @@ html {
   transition: filter 0.55s ease;
 }
 
-.project-card:hover .project-preview img {
+.project-preview-patch {
+  position: absolute;
+  left: 1.1%;
+  bottom: 1.2%;
+  width: 4.6%;
+  aspect-ratio: 1;
+  pointer-events: none;
+  filter: grayscale(1);
+  transition: filter 0.55s ease;
+}
+
+.project-card:hover .project-preview img,
+.project-card:hover .project-preview-patch {
   filter: grayscale(0);
 }
 

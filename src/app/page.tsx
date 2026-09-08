@@ -39,6 +39,8 @@ const projects = [
     name: "Karaoke Now",
     category: "Entertainment",
     image: "/project-screenshots/karaoke.png",
+    screenshotPatch:
+      "linear-gradient(135deg, rgb(7 8 12) 0%, rgb(10 10 17) 100%)",
     description:
       "Open a room, queue a song, and sing together from anywhere.",
     href: "https://karaokenow.vietbrosinaus.com",
@@ -66,6 +68,7 @@ const projects = [
     name: "What I Mean",
     category: "Productivity",
     image: "/project-screenshots/what-i-mean.jpg",
+    screenshotPatch: "rgb(247 248 252)",
     description:
       "Think out loud by text or voice while a thoughtful AI helps you find what really matters.",
     href: "https://voice-debrief.vercel.app",
@@ -306,6 +309,13 @@ export default async function Home() {
                   sizes="(min-width: 768px) 50vw, 100vw"
                   className="h-full w-full object-cover object-top"
                 />
+                {"screenshotPatch" in project && (
+                  <span
+                    aria-hidden="true"
+                    className="project-preview-patch"
+                    style={{ background: project.screenshotPatch }}
+                  />
+                )}
               </div>
 
               <div className="project-card-copy">
