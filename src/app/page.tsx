@@ -29,7 +29,7 @@ const projects = [
   {
     name: "Sanguosha Online",
     category: "Game",
-    image: "/project-screenshots/sanguosha.jpg",
+    image: "/project-screenshots/sanguosha-live.jpg",
     description:
       "Play Tam Quốc Sát Nội Chiến with friends in a bilingual Vietnamese and English web experience.",
     href: "https://sanguosha-online.vercel.app",
@@ -38,7 +38,7 @@ const projects = [
   {
     name: "Karaoke Now",
     category: "Entertainment",
-    image: "/project-screenshots/karaoke.png",
+    image: "/project-screenshots/karaoke-live.jpg",
     screenshotPatch:
       "linear-gradient(135deg, rgb(7 8 12) 0%, rgb(10 10 17) 100%)",
     description:
