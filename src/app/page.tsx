@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import AppCard from "./app-card";
+import { apps } from "./apps";
 import ContactForm from "./contact-form";
 import KnotVortex from "./knot-vortex";
 import ThemeToggle from "./theme-toggle";
@@ -22,57 +24,6 @@ const people = [
     role: "FDE @lyratechnologies",
     avatar: "https://avatars.githubusercontent.com/u/40386529?v=4",
     site: "https://elvis-tran.is-a.dev",
-  },
-];
-
-const projects = [
-  {
-    name: "Sanguosha Online",
-    category: "Game",
-    image: "/project-screenshots/sanguosha-live.jpg",
-    description:
-      "Play Tam Quốc Sát Nội Chiến with friends in a bilingual Vietnamese and English web experience.",
-    href: "https://sanguosha-online.vercel.app",
-    domain: "sanguosha-online.vercel.app",
-  },
-  {
-    name: "Karaoke Now",
-    category: "Entertainment",
-    image: "/project-screenshots/karaoke-live.jpg",
-    screenshotPatch:
-      "linear-gradient(135deg, rgb(7 8 12) 0%, rgb(10 10 17) 100%)",
-    description:
-      "Open a room, queue a song, and sing together from anywhere.",
-    href: "https://karaokenow.vietbrosinaus.com",
-    domain: "karaokenow.vietbrosinaus.com",
-  },
-  {
-    name: "PriceCheck AU",
-    category: "Shopping",
-    image: "/project-screenshots/price.png",
-    description:
-      "Compare Australian grocery prices side by side and find the best value per unit.",
-    href: "https://price-check-au.vercel.app",
-    domain: "price-check-au.vercel.app",
-  },
-  {
-    name: "Plan2Go",
-    category: "Travel",
-    image: "/project-screenshots/travel.png",
-    description:
-      "Build a realistic multi-day itinerary with travel time, opening hours, and maps.",
-    href: "https://plan2go-sandy.vercel.app",
-    domain: "plan2go-sandy.vercel.app",
-  },
-  {
-    name: "What I Mean",
-    category: "Productivity",
-    image: "/project-screenshots/what-i-mean.jpg",
-    screenshotPatch: "rgb(247 248 252)",
-    description:
-      "Think out loud by text or voice while a thoughtful AI helps you find what really matters.",
-    href: "https://voice-debrief.vercel.app",
-    domain: "voice-debrief.vercel.app",
   },
 ];
 
@@ -192,8 +143,8 @@ export default async function Home() {
             <span className="hidden sm:inline">vietbrosinaus</span>
           </Link>
           <div className="flex items-center gap-5 sm:gap-9 font-mono text-xs sm:text-sm tracking-wide text-muted">
-            <a href="#projects" className="nav-link hover:text-foreground transition-colors duration-300">
-              Projects
+            <a href="#apps" className="nav-link hover:text-foreground transition-colors duration-300">
+              Apps
             </a>
             {SHOW_PEOPLE && (
               <a href="#people" className="nav-link hover:text-foreground transition-colors duration-300">
@@ -227,7 +178,7 @@ export default async function Home() {
             </p>
             <div className="animate-fade-up delay-3 mt-12 flex items-center gap-4">
               <a
-                href="#projects"
+                href="#apps"
                 className="group inline-flex items-center gap-2 font-mono text-sm border border-foreground px-5 py-2.5 hover:bg-foreground hover:text-background transition-all duration-300"
               >
                 See our work
@@ -282,73 +233,36 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Projects */}
-      <section id="projects" className="scroll-mt-16 sm:scroll-mt-[4.5rem] px-6 max-w-[1200px] mx-auto py-24 md:py-32">
+      {/* Apps */}
+      <section id="apps" className="scroll-mt-16 sm:scroll-mt-[4.5rem] px-6 max-w-[1200px] mx-auto py-24 md:py-32">
         <div className="animate-fade-up mb-12 md:mb-16">
           <h2 className="text-5xl md:text-7xl font-bold tracking-[-0.03em]">
-            Projects
+            Apps
           </h2>
         </div>
 
         <div className="grid md:grid-cols-2 gap-4 md:gap-5">
-          {projects.map((project, i) => (
-            <a
-              key={project.name}
-              href={project.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`Open ${project.name}`}
-              className={`project-card animate-fade-up delay-${i + 2} group`}
-            >
-              <div className="project-preview">
-                <Image
-                  src={project.image}
-                  alt={`${project.name} app interface`}
-                  width={1280}
-                  height={720}
-                  sizes="(min-width: 768px) 50vw, 100vw"
-                  className="h-full w-full object-cover object-top"
-                />
-                {"screenshotPatch" in project && (
-                  <span
-                    aria-hidden="true"
-                    className="project-preview-patch"
-                    style={{ background: project.screenshotPatch }}
-                  />
-                )}
-              </div>
-
-              <div className="project-card-copy">
-                <div className="font-mono text-[0.68rem] uppercase tracking-[0.16em] text-muted">
-                  <span>{project.category}</span>
-                </div>
-                <h3 className="mt-5 text-2xl md:text-3xl font-semibold tracking-[-0.025em]">
-                  {project.name}
-                </h3>
-                <p className="text-muted mt-3 max-w-md leading-relaxed">
-                  {project.description}
-                </p>
-
-                <div className="mt-8 pt-5 border-t border-border flex items-center justify-between gap-4">
-                  <span className="font-mono text-xs text-muted truncate">
-                    {project.domain}
-                  </span>
-                  <span className="shrink-0 inline-flex items-center gap-2 font-mono text-sm font-medium">
-                    Open app
-                  <svg
-                    className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                  >
-                    <path d="M5 12h14M12 5l7 7-7 7" />
-                  </svg>
-                  </span>
-                </div>
-              </div>
-            </a>
+          {apps.slice(0, 4).map((app, i) => (
+            <AppCard key={app.name} app={app} index={i} />
           ))}
+        </div>
+
+        <div className="animate-fade-up mt-10 flex justify-center">
+          <Link
+            href="/apps"
+            className="group inline-flex items-center gap-2 font-mono text-sm border border-foreground px-5 py-2.5 hover:bg-foreground hover:text-background transition-all duration-300"
+          >
+            See all apps
+            <svg
+              className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform duration-300"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </Link>
         </div>
       </section>
 
