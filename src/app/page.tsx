@@ -242,7 +242,7 @@ export default async function Home() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-4 md:gap-5">
-          {apps.slice(0, 4).map((app, i) => (
+          {apps.filter((app) => app.featured !== false).slice(0, 4).map((app, i) => (
             <AppCard key={app.name} app={app} index={i} />
           ))}
         </div>

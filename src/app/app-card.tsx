@@ -22,6 +22,7 @@ export default function AppCard({ app, index }: AppCardProps) {
           width={1280}
           height={720}
           sizes="(min-width: 768px) 50vw, 100vw"
+          loading={index === 0 ? "eager" : "lazy"}
           className="h-full w-full object-cover object-top"
         />
         {app.screenshotPatch && (

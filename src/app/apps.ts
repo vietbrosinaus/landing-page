@@ -5,10 +5,20 @@ export type App = {
   description: string;
   href: string;
   domain: string;
+  featured?: boolean;
   screenshotPatch?: string;
 };
 
 export const apps: App[] = [
+  {
+    name: "Bàn Bài",
+    category: "Game",
+    image: "/project-screenshots/ban-bai.svg",
+    description:
+      "Create a private card table, invite friends by link, and play with a classic deck or Tam Quốc Sát cards.",
+    href: "https://ban-bai.vercel.app",
+    domain: "ban-bai.vercel.app",
+  },
   {
     name: "Sanguosha Online",
     category: "Game",
@@ -17,6 +27,7 @@ export const apps: App[] = [
       "Play Tam Quốc Sát Nội Chiến with friends in a bilingual Vietnamese and English web experience.",
     href: "https://sanguosha-online.vercel.app",
     domain: "sanguosha-online.vercel.app",
+    featured: false,
   },
   {
     name: "Karaoke Now",
